@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2 Player Dice Game</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+        <div class="container">
+                
+                <!-- Player 1 box -->
+                <div class="p0-panel" id="p0-panel">
+                        
+                    <div class = "player-name" id = "name-0">Player 1</div>
+                    <div class = "player-score"><span id="score-0">0</span></div>
+                    
+        
+                <div class="player-current-box-0">
+                    
+                    <div class = "player-current-title">CURRENT</div>
+                    <div class = "player-current"><span id="current-0">0</span></div>
+                </div>
+                </div>
+                
+                <!-- Central buttons -->
+                <div class="center-container">
+                <!-- New game button -->
+                <button id="btn-new-game">
+                        <i class="far fa-plus-square"></i>  NEW GAME
+                </button>
+                <!-- Dice -->
+                <img id= "dice"></img>
+                <!-- Roll dice button -->
+                <button id="btn-roll">
+                        <i class="fas fa-redo"></i>  ROLL
+                </button>
+                <!-- Hold score button -->
+                <button id="btn-hold">
+                        <i class="fas fa-hand-paper"></i>  HOLD
+                </button>
+            </div>
+
+               <!-- Player 2 box  -->
+                <div class="p1-panel" id="p1-panel">
+                        <div class = "player-name" id = "name-1">Player 2</div>
+                        <div class = "player-score"><span id="score-1">0</span></div>
+
+                    <div class="player-current-box-1">
+                        <div class = "player-current-title">CURRENT</div>
+                        <div class = "player-current"><span id="current-1">0</span></div>
+                    </div>
+            </div>
+                 
+        
+        
+    </div>
+        <script src="app.js"></script>
+        </body>
+        </html>

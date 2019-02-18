@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+
+body {
+    margin: 0;
+    background: linear-gradient(to bottom,#C9FFBF, #3c8e67);
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    font-family: 'Barlow', sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 500px;
+    width: 700px;
+    margin: 175px auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.center-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+    width: 150px;
+    margin-left: 270px;
+    margin-top: 50px;
+}
+
+.center-container img {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#btn-roll, #btn-new-game, #btn-hold {
+    background-color: #93ceb2;
+    border-radius: 5px;
+    padding: 10px;
+    border: 0px;
+    width: 100%;
+}
+
+.p0-panel {
+    font-size: 40px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.p1-panel {
+    font-size: 40px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.player-current-box-0, .player-current-box-1 {
+    width: 30%;
+    margin: 10px auto;
+    background-color: #88bca3;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.player-current-title {
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+.player-name {
+    padding-top: 20px;
+}
+
+.player-score {
+    font-size: 60px;
+}
