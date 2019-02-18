@@ -1,24 +1,105 @@
+// Variables 
+
+let scores, roundScore, activePlayer, gamePlaying;
+
+init();
 // When i matches the number in the file name the image will display
 // In this case we are generating numbers 1-6
-let imageArray = [];
+let diceImgs = [];
     // Loops through the array up to 6
     for (let i = 1; i<= 6; i++) {
-        imageArray[i] = `dice-${i}.png`;
+        diceImgs[i] = `dice-${i}.png`;
     }
 
-btnRoll = document.getElementById("btn-roll");
-btnHold = document.getElementById("btn-hold");
+
+// Called when the game is loaded
+function init() {
+    scores = [0,0];
+    activePlayer = 0;
+    roundScore = 0;
+    gamePlaying = true;
+
+	document.querySelector('#dice').style.visibility = 'hidden';
+
+// Reset scores
+
+    document.getElementById("score-0").textContent = " ";
+    document.getElementById("score-1").textContent = " ";
+    document.getElementById("current-0").textContent = " ";
+    document.getElementById("current-1").textContent = " ";
+
+// Reset player bg colour
+
+    document.querySelector(".p0-panel").classList.remove("active");
+    document.querySelector(".p1-panel").classList.remove("active");
+    document.querySelector(".p0-panel").classList.add("active");
+
+}
 
 
+// New game button
+document.querySelector("#btn-new-game").addEventListener("click", init);
+
+// Roll dice button
+document.querySelector("#btn-roll").addEventListener("click", function () {
+
+    document.querySelector('#dice').style.visibility = 'visible';
 
 
+    // Check game is playing
+        if (gamePlaying) {
+    
+    // Generate two random numbers and store in variables and show the dice
+        let scores = Math.floor(Math.random() * 6)+1;
+        document.getElementById("dice").src = diceImgs[scores];
+
+    // Update the round score if a 1 isn't rolled
+    if (scores !== 1) {
+        // Add up score
+        roundScore += scores;
+        document.querySelector("#current-"+ activePlayer).textContent = roundScore;
+    } else {
+        // Switch player
+        document.querySelector("#current-"+ activePlayer).textContent = "You rolled a 1!";
+        nextPlayer();
+    }
+}
+});
+
+// Switch player function
+function nextPlayer() {
+    activePlayer === 0 ? activePlayer =1 : activePlayer = 0;
+    roundScore = 0;
+
+    document.getElementById("current-0").textContent = "0";
+    document.getElementById("current-1").textContent = "0";
+    document.querySelector(".p0-panel").classList.toggle(".active")
+    document.querySelector(".p1-panel").classList.toggle(".active")
+}
 
 
+// Hold score button
+document.querySelector("#btn-hold").addEventListener("click", function () {
 
+    if(gamePlaying) {
+        // ???
+        scores[activePlayer] += roundScore;
 
+        // Update UI
+        document.querySelector("#score-" + activePlayer).textContent = scores[activePlayer];
 
+        let winningScore = 20;
 
+        if (scores[activePlayer] >= winningScore) {
+            document.querySelector("#score-" + activePlayer).textContent = "You have won!"
+            gamePlaying = false;
 
+    }   else {
+        nextPlayer();
+    }
+}
+        
+});
 
 
 

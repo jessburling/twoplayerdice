@@ -32,7 +32,7 @@ body {
     margin-top: 50px;
 }
 
-.center-container img {
+#dice {
     width: 100px;
     height: 100px;
     margin-top: 30px;
@@ -74,7 +74,7 @@ body {
 }
 
 
-.player-current-box-0, .player-current-box-1 {
+.player-current-box {
     width: 30%;
     margin: 10px auto;
     background-color: #88bca3;
@@ -94,4 +94,8 @@ body {
 
 .player-score {
     font-size: 60px;
+}
+
+.active {
+    background-color: #C2EFD1;
 }
